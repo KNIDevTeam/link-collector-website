@@ -1,15 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import FullPage from "../components/FullPage";
 import Button from "../components/Button";
 import theme from "../styles/theme";
 import {useHistory} from 'react-router-dom'
 
-//info
-//przekierowanie na login po kliknięciu
-
-const DeniedView = props => {
+const LogoutView = props => {
 
     const history = useHistory();
+
+    useEffect(() => {
+        localStorage.clear();
+        props.setToken(null);
+        props.setCounter(0);
+    })
 
     const move = () => {
         history.push('/login')
@@ -17,9 +20,9 @@ const DeniedView = props => {
 
     return(
         <FullPage fancy contentStyle={{flexFlow: 'column', gap: '5vh'}}>
-            <span style={{fontSize: theme.font.size.m}}>Najwyraźniej nie masz uprawnień do przeglądania tej zawartości.</span>
+            <span style={{fontSize: theme.font.size.m}}>Pomyślnie wylogowano.</span>
             <Button className='special' onClick={() => move()} style={btn}>
-                Przejdź do ekranu logowania
+                Zaloguj się ponownie.
             </Button>
         </FullPage>
     )
@@ -30,4 +33,4 @@ const btn = {
     height: '8vh',
 }
 
-export default DeniedView;
+export default LogoutView;

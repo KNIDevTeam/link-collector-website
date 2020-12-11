@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 code {
@@ -124,5 +125,12 @@ code {
 .btn:hover {
   transition: .5s;
   background-color: #124BB5 !important;
+}
+
+.special:hover {
   box-shadow: 5px 5px 0 #00318C !important;
+}
+
+.round {
+  transition: .5s;
 }

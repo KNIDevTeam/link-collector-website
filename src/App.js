@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import NotFoundView from "./views/NotFoundView";
 import EntranceView from "./views/EntranceView";
@@ -8,10 +8,19 @@ import MainView from "./views/MainView";
 import Header from "./components/Header";
 import DeniedView from "./views/DeniedView";
 import styles from "./styles/styles";
+import 'react-toastify/dist/ReactToastify.css';
+import LogoutView from "./views/LogoutView";
 
 function App() {
     const [token, setToken] = useState(null);
+    const [mainCounter, setMainCounter] = useState(0);
+    const [loaded, setLoaded] = useState(false)
 
+    useEffect(() => {
+        const localToken = localStorage.getItem('token');
+        setToken(localToken);
+        setLoaded(true);
+    }, [])
 
     return (
         <div id='app' style={styles.app}>
@@ -22,15 +31,18 @@ function App() {
                     </Route>
 
                     <Route exact path='/login'>
-                        <LoginView token={token} setToken={setToken}/>
+                        { (!token) ? <LoginView token={token} setToken={setToken}/> : <Redirect to='/main' />}
                     </Route>
                     <Route exact path='/main'>
                         <Header/>
-                        <MainView token={token} setToken={setToken}/>
+                        <MainView loaded={loaded} token={token} setToken={setToken} counter={mainCounter} setCounter={setMainCounter}/>
                     </Route>
 
                     <Route path='/404' component={NotFoundView}/>
                     <Route path='/denied' component={DeniedView}/>
+                    <Route path='/logout' >
+                        <LogoutView setToken={setToken} setCounter={setMainCounter} />
+                    </Route>
                     <Route path='*'>
                         <Redirect to={`/404`}/>
                     </Route>

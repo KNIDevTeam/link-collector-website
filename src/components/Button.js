@@ -4,7 +4,7 @@ import styles from "../styles/styles";
 const Button = props => {
 
     return (
-        <div className={'btn'} onClick={props.onClick} style={{...styles.btn, ...props.style}}>
+        <div className={'btn ' + props.className} onClick={props.onClick} style={{...styles.btn, ...props.style}}>
             {props.children}
         </div>
     )
