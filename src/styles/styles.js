@@ -9,7 +9,6 @@ const styles = {
         height: '100%',
         width: '100%',
         background: theme.dark.background,
-        zIndex: 10
     },
     flexCenter: {
         display: 'flex',
@@ -18,7 +17,7 @@ const styles = {
     },
     round: {
         position: 'absolute',
-        zIndex: 1,
+        zIndex: 0,
         top: '50%',
         left: '0',
         height: '50%',
@@ -34,7 +33,6 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'space-around',
         boxShadow: '5px 5px 0 ' + theme.dark.darkerMain,
-        zIndex: 10
     },
     header: {
         item: {

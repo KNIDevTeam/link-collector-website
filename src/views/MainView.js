@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useHistory} from 'react-router-dom'
 import FullPage from "../components/FullPage";
 import {toast, ToastContainer} from "react-toastify";
@@ -10,6 +10,7 @@ import Loading from "../components/Loading";
 const MainView = props => {
 
     const history = useHistory();
+    const [dataLoaded, setDataLoaded] = useState(false);
 
     useEffect(() => {
         if(props.loaded)
@@ -33,9 +34,8 @@ const MainView = props => {
         return <Loading backgroundStyle={t} />
 
     return(
-        <FullPage fancy backgroundStyle={{height: '92vh'}}>
-            <ToastContainer />
-            MainView
+        <FullPage fancy backgroundStyle={{height: '92vh'}} toastify={<ToastContainer />}>
+            {(!dataLoaded) ? <Loading backgroundStyle={{height: '92vh'}} /> : <span>DataLoaded</span>}
         </FullPage>
     )
 }

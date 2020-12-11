@@ -43,8 +43,7 @@ const LoginView = props => {
     }
 
     return(
-        <FullPage fancy contentStyle={{}} backgroundStyle={{}}>
-            <ToastContainer position='top-center' autoClose={3000} />
+        <FullPage fancy contentStyle={{}} backgroundStyle={{}} toastify={<ToastContainer position='top-center' autoClose={3000} />}>
             <div style={{marginBottom: '30vh', ...styles.flexCenter, flexFlow: 'column', gap: '5vh'}}>
                 <div style={{fontSize: theme.font.size.xl, fontWeight: 600}}>
                     Podaj token uwierzytelniający
