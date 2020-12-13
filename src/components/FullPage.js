@@ -8,12 +8,13 @@ const FullPage = React.forwardRef((props, ref) => {
     const content = useRef(null);
 
     useEffect(() => {
-        gsap.from(content.current, {y: -300, duration: 1})
+        if(props.animated)
+            gsap.from(content.current, {y: -300, duration: 1})
     }, [])
 
     return (
         <div style={{height: '100vh', width: '100vw', position: 'relative', ...props.backgroundStyle}}>
-            <div style={{...styles.page, ...styles.flexCenter}}>
+            <div ref={ref} style={{...styles.page, ...styles.flexCenter}}>
                 {props.toastify}
                 <div ref={content} style={{...styles.flexCenter, ...props.contentStyle, zIndex: 2}}>
                     {props.children}

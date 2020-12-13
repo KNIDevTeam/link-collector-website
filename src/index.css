@@ -117,7 +117,7 @@ code {
   }
 }
 
-.btn {
+.btn, .bright {
   cursor: pointer;
   transition: .5s;
 }
@@ -126,6 +126,14 @@ code {
   transition: .5s;
   background-color: #124BB5 !important;
 }
+
+
+.bright:hover {
+  transition: .5s;
+  background-color: #192857 !important;
+  box-shadow: 5px 5px 0 #124BB5 !important;
+}
+
 
 .special:hover {
   box-shadow: 5px 5px 0 #00318C !important;

@@ -11,7 +11,6 @@ const EntranceView = props => {
     const history = useHistory();
 
     useEffect(() => {
-        console.log(props.token)
         if(props.token)
             history.push('/main')
         else

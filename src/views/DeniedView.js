@@ -16,18 +16,14 @@ const DeniedView = props => {
     }
 
     return(
-        <FullPage fancy contentStyle={{flexFlow: 'column', gap: '5vh'}}>
+        <FullPage animated fancy contentStyle={{flexFlow: 'column', gap: '5vh'}}>
             <span style={{fontSize: theme.font.size.m}}>Najwyraźniej nie masz uprawnień do przeglądania tej zawartości.</span>
-            <Button className='special' onClick={() => move()} style={btn}>
+            <Button className='special' onClick={() => move()}>
                 Przejdź do ekranu logowania
             </Button>
         </FullPage>
     )
 }
 
-const btn = {
-    width: '20vw',
-    height: '8vh',
-}
 
 export default DeniedView;

@@ -38,8 +38,8 @@ const Header = props => {
 
 const wrapper = {
     width: '100%',
-    height: '8vh',
-    background: theme.dark.darkerMain
+    height: '10vh',
+    background: theme.dark.darkerMain,
 }
 
 export default Header;

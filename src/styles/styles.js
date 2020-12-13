@@ -33,6 +33,7 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'space-around',
         boxShadow: '5px 5px 0 ' + theme.dark.darkerMain,
+        padding: '2vh 4vw'
     },
     header: {
         item: {
@@ -40,7 +41,6 @@ const styles = {
                 background: theme.dark.brighterMain
             },
             normal: {
-                // width: '20vw',
                 padding: '0 3.5vw',
                 height: '100%',
                 background: theme.dark.darkerMain,
@@ -51,6 +51,26 @@ const styles = {
                 textDecoration: 'none',
                 fontSize: theme.font.size.m
             }
+        }
+    },
+    sideBar: {
+        background: theme.dark.text,
+        height: '20%',
+        width: '100%',
+        backgroundColor: theme.dark.main,
+        headerItem: {
+            width: '10%',
+            height: '100%',
+            background: theme.dark.darkerMain,
+            fontSize: theme.font.size.m,
+            fontWeight: 700
+        },
+        item: {
+            height: '50%',
+            width: '12%',
+            background: theme.dark.brighterMain,
+            borderRadius: '10%',
+            boxShadow: '5px 5px 0 ' + theme.dark.darkerMain,
         }
     }
 }

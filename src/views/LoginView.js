@@ -31,8 +31,8 @@ const LoginView = props => {
         authService.login(value).then(response => {
             if (response.success) {
                 props.setToken(response.data);
-
-                localStorage.setItem('token', response.data)
+                props.setTokenLoaded(true);
+                localStorage.setItem('token', response.data);
 
                 history.push('/main');
             } else {
@@ -43,13 +43,13 @@ const LoginView = props => {
     }
 
     return(
-        <FullPage fancy contentStyle={{}} backgroundStyle={{}} toastify={<ToastContainer position='top-center' autoClose={3000} />}>
+        <FullPage animated fancy contentStyle={{}} backgroundStyle={{}} toastify={<ToastContainer position='top-center' autoClose={3000} />}>
             <div style={{marginBottom: '30vh', ...styles.flexCenter, flexFlow: 'column', gap: '5vh'}}>
                 <div style={{fontSize: theme.font.size.xl, fontWeight: 600}}>
                     Podaj token uwierzytelniający
                 </div>
                 <input ref={login} style={frame} />
-                <Button className='special' style={btn} onClick={handleClick}>
+                <Button className='special' onClick={handleClick}>
                     Zaloguj
                 </Button>
             </div>
@@ -66,9 +66,5 @@ const frame = {
     fontSize: theme.font.size.m
 }
 
-const btn = {
-    width: '10vw',
-    height: '8vh',
-}
 
 export default LoginView;
