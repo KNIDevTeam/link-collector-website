@@ -14,12 +14,12 @@ import LogoutView from "./views/LogoutView";
 function App() {
     const [token, setToken] = useState(null);
     const [mainCounter, setMainCounter] = useState(0);
-    const [loaded, setLoaded] = useState(false)
+    const [tokenLoaded, setTokenLoaded] = useState(false)
 
     useEffect(() => {
         const localToken = localStorage.getItem('token');
         setToken(localToken);
-        setLoaded(true);
+        setTokenLoaded(true);
     }, [])
 
     return (
@@ -31,11 +31,11 @@ function App() {
                     </Route>
 
                     <Route exact path='/login'>
-                        { (!token) ? <LoginView token={token} setToken={setToken}/> : <Redirect to='/main' />}
+                        { (!token) ? <LoginView setTokenLoaded={setTokenLoaded} token={token} setToken={setToken}/> : <Redirect to='/main' />}
                     </Route>
                     <Route exact path='/main'>
                         <Header/>
-                        <MainView loaded={loaded} token={token} setToken={setToken} counter={mainCounter} setCounter={setMainCounter}/>
+                        <MainView tokenLoaded={tokenLoaded} token={token} setToken={setToken} counter={mainCounter} setCounter={setMainCounter}/>
                     </Route>
 
                     <Route path='/404' component={NotFoundView}/>

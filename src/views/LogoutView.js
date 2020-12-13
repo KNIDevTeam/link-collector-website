@@ -19,18 +19,13 @@ const LogoutView = props => {
     }
 
     return(
-        <FullPage fancy contentStyle={{flexFlow: 'column', gap: '5vh'}}>
+        <FullPage animated fancy contentStyle={{flexFlow: 'column', gap: '5vh'}}>
             <span style={{fontSize: theme.font.size.m}}>Pomyślnie wylogowano.</span>
-            <Button className='special' onClick={() => move()} style={btn}>
-                Zaloguj się ponownie.
+            <Button className='special' onClick={() => move()}>
+                Zaloguj się ponownie
             </Button>
         </FullPage>
     )
-}
-
-const btn = {
-    width: '20vw',
-    height: '8vh',
 }
 
 export default LogoutView;

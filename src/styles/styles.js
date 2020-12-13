@@ -9,7 +9,6 @@ const styles = {
         height: '100%',
         width: '100%',
         background: theme.dark.background,
-        zIndex: 10
     },
     flexCenter: {
         display: 'flex',
@@ -18,7 +17,7 @@ const styles = {
     },
     round: {
         position: 'absolute',
-        zIndex: 1,
+        zIndex: 0,
         top: '50%',
         left: '0',
         height: '50%',
@@ -34,7 +33,7 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'space-around',
         boxShadow: '5px 5px 0 ' + theme.dark.darkerMain,
-        zIndex: 10
+        padding: '2vh 4vw'
     },
     header: {
         item: {
@@ -42,7 +41,6 @@ const styles = {
                 background: theme.dark.brighterMain
             },
             normal: {
-                // width: '20vw',
                 padding: '0 3.5vw',
                 height: '100%',
                 background: theme.dark.darkerMain,
@@ -53,6 +51,46 @@ const styles = {
                 textDecoration: 'none',
                 fontSize: theme.font.size.m
             }
+        }
+    },
+    sideBar: {
+        background: theme.dark.text,
+        height: '20%',
+        width: '100%',
+        backgroundColor: theme.dark.main,
+        headerItem: {
+            width: '10%',
+            height: '100%',
+            background: theme.dark.darkerMain,
+            fontSize: theme.font.size.m,
+            fontWeight: 700
+        },
+        item: {
+            height: '50%',
+            width: '12%',
+            background: theme.dark.brighterMain,
+            borderRadius: '10%',
+            boxShadow: '5px 5px 0 ' + theme.dark.darkerMain,
+        }
+    },
+    table: {
+        color: theme.dark.text,
+        border: '3px solid',
+        boxShadow: '5px 5px 0px ' + theme.dark.darkerMain,
+        borderColor: theme.dark.text,
+        fontFamily: theme.font.family,
+        '& svg': {
+            fill: theme.dark.text
+        },
+        '& div': {
+            color: theme.dark.text
+        },
+        '& .MuiDataGrid-colCell': {
+            fontSize: theme.font.size.xs,
+        },
+        '& .MuiDataGrid-colCellTitleContainer, .MuiDataGrid-cell, .MuiDataGrid-mainGridContainer, .MuiDataGrid-columnsContainer': {
+            textAlign: 'center',
+            justifyContent: 'center'
         }
     }
 }
