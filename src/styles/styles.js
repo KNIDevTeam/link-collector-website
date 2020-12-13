@@ -72,6 +72,26 @@ const styles = {
             borderRadius: '10%',
             boxShadow: '5px 5px 0 ' + theme.dark.darkerMain,
         }
+    },
+    table: {
+        color: theme.dark.text,
+        border: '3px solid',
+        boxShadow: '5px 5px 0px ' + theme.dark.darkerMain,
+        borderColor: theme.dark.text,
+        fontFamily: theme.font.family,
+        '& svg': {
+            fill: theme.dark.text
+        },
+        '& div': {
+            color: theme.dark.text
+        },
+        '& .MuiDataGrid-colCell': {
+            fontSize: theme.font.size.xs,
+        },
+        '& .MuiDataGrid-colCellTitleContainer, .MuiDataGrid-cell, .MuiDataGrid-mainGridContainer, .MuiDataGrid-columnsContainer': {
+            textAlign: 'center',
+            justifyContent: 'center'
+        }
     }
 }
 
